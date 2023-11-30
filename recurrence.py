@@ -13,9 +13,9 @@ class RecurrenceType(Enum):
 
 # Class for handling recurrences
 class Recurrence:
-    DEFAULT_INTERVAL = 1  # Default interval for recurrences
+    _DEFAULT_INTERVAL = 1  # Default interval for recurrences
 
-    def __init__(self, recurrence_type: RecurrenceType, interval: int = DEFAULT_INTERVAL):
+    def __init__(self, recurrence_type: RecurrenceType, interval: int = _DEFAULT_INTERVAL):
         """
         Initializes a Recurrence object.
 
@@ -25,8 +25,42 @@ class Recurrence:
         """
         if not isinstance(recurrence_type, RecurrenceType):
             raise ValueError("recurrence_type must be a valid RecurrenceType")
-        self.recurrence_type = recurrence_type
-        self.interval = interval  # Number of units for the recurrence (default is 1)
+        self._recurrence_type = recurrence_type
+        self._interval = interval  # Number of units for the recurrence (default is 1)
+
+    @property
+    def recurrence_type(self) -> RecurrenceType:
+        """Getter for recurrence_type property."""
+        return self._recurrence_type
+
+    @recurrence_type.setter
+    def recurrence_type(self, value: RecurrenceType) -> None:
+        """
+        Setter for recurrence_type property.
+
+        Args:
+            value (RecurrenceType): The new recurrence type to set.
+        """
+        if not isinstance(value, RecurrenceType):
+            raise ValueError("recurrence_type must be a valid RecurrenceType")
+        self._recurrence_type = value
+
+    @property
+    def interval(self) -> int:
+        """Getter for interval property."""
+        return self._interval
+
+    @interval.setter
+    def interval(self, value: int) -> None:
+        """
+        Setter for interval property.
+
+        Args:
+            value (int): The new interval to set.
+        """
+        if not isinstance(value, int):
+            raise ValueError("interval must be an integer")
+        self._interval = value
 
     def __str__(self):
         """
@@ -35,10 +69,10 @@ class Recurrence:
         Returns:
             str: String representation of the recurrence.
         """
-        if self.interval == 1:
-            return f"Recurrence: {self.recurrence_type.value}"
+        if self._interval == 1:
+            return f"Recurrence: {self._recurrence_type.value}"
         else:
-            return f"Recurrence: {self.interval} {self.recurrence_type.value}(s)"
+            return f"Recurrence: {self._interval} {self._recurrence_type.value}(s)"
 
     def next_occurrence(self, last_occurrence: date) -> Optional[date]:
         """
@@ -50,14 +84,14 @@ class Recurrence:
         Returns:
             Optional[date]: The next occurrence date, or None if the recurrence type is not recognized.
         """
-        if self.recurrence_type == RecurrenceType.DAILY:
-            new_date = last_occurrence + timedelta(days=self.interval)
-        elif self.recurrence_type == RecurrenceType.WEEKLY:
-            new_date = last_occurrence + timedelta(weeks=self.interval)
-        elif self.recurrence_type == RecurrenceType.MONTHLY:
-            new_date = self.add_months(last_occurrence, self.interval)
-        elif self.recurrence_type == RecurrenceType.YEARLY:
-            new_date = last_occurrence.replace(year=last_occurrence.year + self.interval)
+        if self._recurrence_type == RecurrenceType.DAILY:
+            new_date = last_occurrence + timedelta(days=self._interval)
+        elif self._recurrence_type == RecurrenceType.WEEKLY:
+            new_date = last_occurrence + timedelta(weeks=self._interval)
+        elif self._recurrence_type == RecurrenceType.MONTHLY:
+            new_date = self.add_months(last_occurrence, self._interval)
+        elif self._recurrence_type == RecurrenceType.YEARLY:
+            new_date = last_occurrence.replace(year=last_occurrence.year + self._interval)
         else:
             return None
 

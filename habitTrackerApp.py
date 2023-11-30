@@ -1,5 +1,5 @@
 from datetime import date
-from typing import Optional, List, Tuple
+from typing import Optional, List
 
 from recurrence import Recurrence, RecurrenceType
 from habit import Habit
@@ -8,16 +8,56 @@ from habitTracker import HabitTracker
 
 # Class for the HabitTrackerApp, a user interface for managing habits
 class HabitTrackerApp(HabitTracker):
-    class ChosenHabit:
+    class _ChosenHabit:
         def __init__(self, habit_index: Optional[int], habit: Optional[Habit]):
-            self.habit_index = habit_index
-            self.habit = habit
+            self._habit_index = habit_index
+            self._habit = habit
+
+        @property
+        def habit_index(self) -> Optional[int]:
+            """
+            Get the habit_index.
+
+            Returns:
+                Optional[int]: The habit_index value.
+            """
+            return self._habit_index
+
+        @habit_index.setter
+        def habit_index(self, habit_index: Optional[int]) -> None:
+            """
+            Set the habit_index.
+
+            Args:
+                habit_index (Optional[int]): The new habit_index value.
+            """
+            self._habit_index = habit_index
+
+        @property
+        def habit(self) -> Optional[Habit]:
+            """
+            Get the habit.
+
+            Returns:
+                Optional[Habit]: The habit object.
+            """
+            return self._habit
+
+        @habit.setter
+        def habit(self, habit: Optional[Habit]) -> None:
+            """
+            Set the habit.
+
+            Args:
+                habit (Optional[Habit]): The new habit object.
+            """
+            self._habit = habit
 
     def __init__(self, habits: Optional[List[Habit]] = None):
         super().__init__(habits=habits)
-        self._run_main_program_loop()
+        self.run_main_program_loop()
 
-    def _run_main_program_loop(self):
+    def run_main_program_loop(self):
         # Main program loop with menu choices
         menu_choices = {
             1: ("List Habits", self.print_habits),
@@ -55,7 +95,7 @@ class HabitTrackerApp(HabitTracker):
                 print()
         except Exception as e:
             print(f'Error: {e}\n')
-            self._run_main_program_loop()
+            self.run_main_program_loop()
 
     def create_and_add_new_habit(self):
         """
@@ -63,7 +103,7 @@ class HabitTrackerApp(HabitTracker):
         """
         new_habit = self.define_habit()
         if new_habit is not None:
-            self.habits.append(new_habit)
+            self._habits.append(new_habit)
             print("Habit created successfully!")
         else:
             print("Habit was not added!")
@@ -92,11 +132,11 @@ class HabitTrackerApp(HabitTracker):
             habits (list of Habit): The list of habits to be printed.
         """
         if not habits:
-            habits = self.habits
+            habits = self._habits
         for i, habit in enumerate(habits):
             print(f"{i + 1}. {habit}")
 
-    def choose_habit(self) -> ChosenHabit:
+    def choose_habit(self) -> _ChosenHabit:
         """
         Prompts the user to choose a habit from the list.
 
@@ -107,7 +147,7 @@ class HabitTrackerApp(HabitTracker):
         habit_index = int(input("Enter habit number: ")) - 1
 
         if 0 <= habit_index < self.get_number_of_habits():
-            return HabitTrackerApp.ChosenHabit(habit_index=habit_index, habit=self.habits[habit_index])
+            return HabitTrackerApp._ChosenHabit(habit_index=habit_index, habit=self._habits[habit_index])
         else:
             return ChosenHabit(None, None)
 
@@ -118,7 +158,7 @@ class HabitTrackerApp(HabitTracker):
         habit: Habit = self.choose_habit().habit
 
         if habit:
-            self.habits.remove(habit)
+            self._habits.remove(habit)
         else:
             print(f"Couldn't remove habit")
 
@@ -163,14 +203,14 @@ class HabitTrackerApp(HabitTracker):
         """
         Prompts the user for a file path and loads habits from the specified file.
         """
-        file_path = self.defineFilePath()
+        file_path = self.define_file_path()
         self.load_habits_from_file(file_path)
 
     def action_save_habits_to_file(self):
         """
         Prompts the user for a file path and saves habits to the specified file.
         """
-        file_path = self.defineFilePath()
+        file_path = self.define_file_path()
         self.save_habits_to_file(file_path)
 
     def action_complete_habit(self):
@@ -181,12 +221,12 @@ class HabitTrackerApp(HabitTracker):
         completion_date: date = self.define_date("Habit completion_date")
 
         if habit_index:
-            self.habits[habit_index].complete(completion_date)
-            print(f"Habit completed. Next deadline is set to {self.habits[habit_index].last_deadline}")
+            self._habits[habit_index].complete(completion_date)
+            print(f"Habit completed. Next deadline is set to {self._habits[habit_index].last_deadline}")
         else:
             print(f"Couldn't complete habit")
 
-    def defineFilePath(self) -> str:
+    def define_file_path(self) -> str:
         """
         Prompts the user to enter a file path and name with the .pickle type.
 
