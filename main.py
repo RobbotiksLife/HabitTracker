@@ -14,264 +14,270 @@ if __name__ == "__main__":
                 "30 minutes of exercise daily",
                 date(2024, 7, 5),
                 Recurrence(RecurrenceType.DAILY),
+                creation_date=date(2024, 6, 16),
+                is_broken=False,
                 completion_history=[
                     HabitCompletionHistoryPoint(
-                        date(2024, 7, 4), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 3), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 2), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 1), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 30), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 29), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 28), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 27), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 26), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 25), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 24), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 23), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 22), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 21), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 20), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 19), False
+                        date(2024, 6, 17), True
                     ),
                     HabitCompletionHistoryPoint(
                         date(2024, 6, 18), True
                     ),
                     HabitCompletionHistoryPoint(
-                        date(2024, 6, 17), True
+                        date(2024, 6, 19), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 20), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 21), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 22), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 23), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 24), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 25), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 26), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 27), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 28), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 29), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 30), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 1), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 2), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 3), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 4), True
                     )
-                ],
-                creation_date=date(2024, 6, 16)
+                ]
             ),
             Habit(
                 "Weekly Reading",
                 "Read a book for 1 hour every Week",
                 date(2024, 7, 6),
                 Recurrence(RecurrenceType.WEEKLY),
+                creation_date=date(2024, 4, 27),
+                is_broken=False,
                 completion_history=[
                     HabitCompletionHistoryPoint(
-                        date(2024, 6, 29), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 22), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 15), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 8), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 1), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 5, 25), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 5, 18), True
+                        date(2024, 5, 4), True
                     ),
                     HabitCompletionHistoryPoint(
                         date(2024, 5, 11), True
                     ),
                     HabitCompletionHistoryPoint(
-                        date(2024, 5, 4), True
+                        date(2024, 5, 18), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 5, 25), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 1), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 8), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 15), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 22), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 29), True
                     )
-                ],
-                creation_date=date(2024, 4, 27)
+                ]
             ),
             Habit(
                 "Meditation",
                 "Practice meditation for 15 minutes daily",
                 date(2024, 7, 10),
                 Recurrence(RecurrenceType.DAILY),
+                creation_date=date(2024, 6, 22),
+                is_broken=False,
                 completion_history=[
                     HabitCompletionHistoryPoint(
-                        date(2024, 7, 9), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 8), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 7), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 6), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 5), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 4), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 3), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 2), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 1), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 30), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 29), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 28), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 27), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 26), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 25), True
+                        date(2024, 6, 23), True
                     ),
                     HabitCompletionHistoryPoint(
                         date(2024, 6, 24), True
                     ),
                     HabitCompletionHistoryPoint(
-                        date(2024, 6, 23), True
+                        date(2024, 6, 25), True
                     ),
-                ],
-                creation_date=date(2024, 6, 22)
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 26), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 27), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 28), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 29), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 30), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 1), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 2), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 3), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 4), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 5), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 6), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 7), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 8), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 9), True
+                    )
+                ]
             ),
             Habit(
                 "Healthy Eating",
                 "Consume a balanced meal with fruits and vegetables daily",
                 date(2024, 7, 12),
                 Recurrence(RecurrenceType.DAILY),
+                creation_date=date(2024, 6, 18),
+                is_broken=False,
                 completion_history=[
                     HabitCompletionHistoryPoint(
-                        date(2024, 7, 11), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 10), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 9), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 8), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 7), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 6), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 5), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 4), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 3), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 2), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 7, 1), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 30), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 29), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 28), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 27), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 26), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 25), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 24), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 23), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 22), False
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 21), True
+                        date(2024, 6, 19), True
                     ),
                     HabitCompletionHistoryPoint(
                         date(2024, 6, 20), True
                     ),
                     HabitCompletionHistoryPoint(
-                        date(2024, 6, 19), True
+                        date(2024, 6, 21), True
                     ),
-                ],
-                creation_date=date(2024, 6, 18)
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 22), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 23), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 24), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 25), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 26), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 27), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 28), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 29), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 30), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 1), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 2), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 3), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 4), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 5), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 6), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 7), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 8), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 9), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 10), False
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 11), True
+                    )
+                ]
             ),
             Habit(
                 "Language Learning",
                 "Practice a new language for 30 minutes every day",
                 date(2024, 7, 14),
                 Recurrence(RecurrenceType.WEEKLY),
+                creation_date=date(2024, 5, 26),
+                is_broken=False,
                 completion_history=[
                     HabitCompletionHistoryPoint(
-                        date(2024, 7, 7), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 30), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 23), True
-                    ),
-                    HabitCompletionHistoryPoint(
-                        date(2024, 6, 16), True
+                        date(2024, 6, 2), True
                     ),
                     HabitCompletionHistoryPoint(
                         date(2024, 6, 9), False
                     ),
                     HabitCompletionHistoryPoint(
-                        date(2024, 6, 2), True
+                        date(2024, 6, 16), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 23), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 6, 30), True
+                    ),
+                    HabitCompletionHistoryPoint(
+                        date(2024, 7, 7), True
                     )
-                ],
-                creation_date=date(2024, 5, 26)
+                ]
             )
         ]
     )
+

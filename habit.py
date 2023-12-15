@@ -72,7 +72,7 @@ class HabitCompletionHistoryPoint:
 # Class for representing habits
 class Habit:
     def __init__(self, name: str, description: str, first_deadline: date, recurrence: Recurrence,
-                 completion_history=None, creation_date: date = datetime.date.today()):
+                 completion_history=None, creation_date: date = datetime.date.today(), is_broken=None):
         """
         Initializes a Habit.
 
@@ -91,7 +91,7 @@ class Habit:
         self._recurrence = recurrence
         self._completion_history: [HabitCompletionHistoryPoint] = completion_history
         self._last_deadline: date = first_deadline
-        self._is_broken: Optional[bool] = None
+        self._is_broken: Optional[bool] = is_broken
         self._creation_date: date = creation_date
 
     @property
@@ -150,13 +150,13 @@ class Habit:
                 self._last_deadline = next_deadline
                 self._completion_history.append(HabitCompletionHistoryPoint(current_deadline, True))
 
-                if not self._is_broken:
+                if self._is_broken is None:
                     self._is_broken = is_habit_broken
 
                 break
             else:
-                current_deadline = next_deadline
                 self._completion_history.append(HabitCompletionHistoryPoint(current_deadline, False))
+                current_deadline = next_deadline
                 is_habit_broken = True
 
     def get_longest_streak(self, sort_history_points_by_date: bool = True) -> int:
